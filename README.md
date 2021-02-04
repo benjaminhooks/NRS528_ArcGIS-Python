@@ -18,7 +18,7 @@ One of my favorite pictures was taken on a camping trip this summer. My landscap
 
 This will be the first coding class I have ever taken, and subsequently the first time I have "programmed". I'm sure I will struggle at times, but I am excited to learn a new skill that has such a huge potential to aid me in my life and career. 
 
-For the sake of practice, here is a table of the classes I will be taking this semester
+For the sake of practice, here is a table of the classes I will be taking this semester.
 
 Course Code | Full Course Name | Teacher  
 ------------ | ------------- | -------------
