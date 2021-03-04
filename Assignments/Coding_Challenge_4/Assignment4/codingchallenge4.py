@@ -25,3 +25,7 @@ out_feature_class = "EMS_Thiessen_riclipped"
 
 arcpy.Clip_analysis(in_features, clip_features, out_feature_class)
 
+# My idea with this was to find areas that might be too far from EMS locations, possibly endangering certain locations due to 
+# longer ambulance wait times and driving distances. Of course, this would require further coding and analysis. I imagine the next
+# steps would be to calculate population density (because distance does not directly = time driven), road lengths within each polygon, 
+# and potentially use a larger location extent, because hospitals outside of RI would not just ignore someone on the border if they were having an emergency.
