@@ -13,3 +13,5 @@ main(sys.argv[2])
 def main(arg):
     print("Favorite Movie: " + str(arg))
 main(sys.argv[3])
+
+# Good work, works fine for me!
