@@ -1,10 +1,10 @@
-
+## Theissen Polygon Generation - Ben Hooks
 
 import arcpy
-from arcpy import env
+from arcpy import env # Not technically needed as you can just go arcpy.env.workspace
 
 
-env.workspace = r"C:\NRS 528\Assignment4"
+aRCPY.env.workspace = r"C:\NRS 528\Assignment4"
 
 # Input point features to go through thiessen polygon execution.
 # In this case, I used emergency medical locations downloaded from RIGIS to visualize areas with the closest EMS location.
