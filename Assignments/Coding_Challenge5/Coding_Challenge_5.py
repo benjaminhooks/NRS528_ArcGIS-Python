@@ -29,21 +29,6 @@ for species in species_list:
                 file.write("\n")
     file.close()
 
-# header = "gbifID	datasetKey	occurrenceID	kingdom	phylum	class	order	family	genus	species	infraspecificEpithet	taxonRank	scientificName	verbatimScientificName	verbatimScientificNameAuthorship	countryCode	locality	stateProvince	occurrenceStatus	individualCount	publishingOrgKey	decimalLatitude	decimalLongitude	coordinateUncertaintyInMeters	coordinatePrecision	elevation	elevationAccuracy	depth	depthAccuracy	eventDate	day	month	year	taxonKey	speciesKey	basisOfRecord	institutionCode	collectionCode	catalogNumber	recordNumber	identifiedBy	dateIdentified	license	rightsHolder	recordedBy	typeStatus	establishmentMeans	lastInterpreted	mediaType	issue\n"
-#
-# for species in species_list:
-#     print("Extracting: " + str(species) + " from: " + file_name)
-#     file = open(species + ".csv", "a", encoding="utf-8")
-#     file.write(header)
-#     with open(file_name, encoding="utf8") as species_file:
-#         next(species_file)
-#         for row in csv.reader(species_file, delimiter="\t"):
-#             if str(row[9]) == species:
-#                 file.write("\t".join(row))
-#                 file.write("\n")
-#     file.close()
-
-
 
 in_Table = r"Homarus americanus.csv"
 x_coords = "decimalLongitude"
