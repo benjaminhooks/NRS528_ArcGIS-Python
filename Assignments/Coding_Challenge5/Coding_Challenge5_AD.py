@@ -1,6 +1,6 @@
 import arcpy, csv, os
 
-arcpy.env.workspace = r"C:\Data\Students_2021\Hooks\Assignments\Coding_Challenge5"
+arcpy.env.workspace = r"C:\NRS 528\Assignment5"
 file_name = "homarus_americanus_gammarus.csv" #Moved the filename out here for simplicity.
 
 arcpy.env.overwriteOutput = True
@@ -33,32 +33,62 @@ with open(file_name, encoding="utf8") as species: #I got a character decode erro
         if str(row[9]) not in species_list: #changed the variable speices to row[9]
             species_list.append(str(row[9]))
 
-print(species_list)
-
+print(species_list[0])
+print(species_list[1])
 
 
 # Trying to extract the information from the "species" colummn, which is the 10th variable in the list
 
 
 # os.mkdir("Homarus_Americanus")
-# #
-# header = "gbifID	datasetKey	occurrenceID	kingdom	phylum	class	order	family	genus	species	infraspecificEpithet	taxonRank	scientificName	verbatimScientificName	verbatimScientificNameAuthorship	countryCode	locality	stateProvince	occurrenceStatus	individualCount	publishingOrgKey	decimalLatitude	decimalLongitude	coordinateUncertaintyInMeters	coordinatePrecision	elevation	elevationAccuracy	depth	depthAccuracy	eventDate	day	month	year	taxonKey	speciesKey	basisOfRecord	institutionCode	collectionCode	catalogNumber	recordNumber	identifiedBy	dateIdentified	license	rightsHolder	recordedBy	typeStatus	establishmentMeans	lastInterpreted	mediaType	issue"
-# #
+
 #
-#
-# for c in species_list:
-#     c_count = 1
-#     with open("homarus_americanus_gammarus.csv") as species_csv:
-#         for row in csv.reader(species_csv):
-#             if row[9] == c:
-#                 if c_count == 1:
-#                     file = open(r"Homarus_Americanus/" + str(c) + ".csv", "w")
-#                     file.write(header)
-#                     c_count = 0
-#
+# for species in species_list:
+#     with open(file_name, encoding="utf8") as homarus_americanus:
+#         next(homarus_americanus)
+#         for row in csv.reader(homarus_americanus):
+#             if str(row[0]) not in species:
+#                 file = open("Homarus_Americanus/" + species + ".csv", "a")
 #                 file.write(",".join(row))
 #                 file.write("\n")
 #     file.close()
+
+
+# Davies edits, just small changes needed, you didn't need to hard code lobster names
+# not sure what row[0] is for as it is not the speices column in your csv.
+# not in species will match none of the species, you need to do an absolute if test
+# on the species from species_list against row[9]
+for species in species_list:
+    print("Extracting: " + str(species) + " from: " + file_name)
+    file = open(species + ".csv", "a", encoding="utf-8")
+    with open(file_name, encoding="utf8") as species_file:
+        next(species_file)
+        for row in csv.reader(species_file, delimiter="\t"):
+            if str(row[9]) == species:
+                file.write(", ".join(row))
+                file.write("\n")
+    file.close()
+
+ # I feel like I am close! My idea was to change row 50 to str(row[9]) because that is where the species name is in the original file,
+# but I got "out of range" error again. I also played around with changing row 46 to include [0] or [1], but that did not seem to work.
+# I have gotten the script to output a CSV file, but I cannot figure out a way to output only Homarus Americanus or Gammarus as a CSV
+# I am using the code below from a past class as my example, when we output multiple CSV files depending on country name. I feel as though the neccesary code is a 
+# slight variation on that, but I have not figured it out yet. 
+# Also, I apologize for the inefficient way I am uploading my code for review. For some reason I got GitHub desktop to work once but then it had trouble
+# working again. Trying to get it to work again to make this easier!
+
+# for country in country_list:
+#     with open("Step_4.csv") as population_csv:
+#         next(population_csv)
+#         for row in csv.reader(population_csv):
+#             if row[0] == country:
+#                 file = open("Country Directory/" + country + ".csv", "a")
+#                 file.write(",".join(row))
+#                 file.write("\n")
+#     file.close()
+
+
+
 
 
 
