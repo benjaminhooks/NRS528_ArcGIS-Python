@@ -1,6 +1,6 @@
 import arcpy, csv, os
 
-arcpy.env.workspace = r"C:\NRS 528\Assignment5"
+arcpy.env.workspace = r"C:\Data\Students_2021\Hooks\Assignments\Coding_Challenge5"
 file_name = "homarus_americanus_gammarus.csv" #Moved the filename out here for simplicity.
 
 arcpy.env.overwriteOutput = True
@@ -58,16 +58,37 @@ print(species_list[1])
 # not sure what row[0] is for as it is not the speices column in your csv.
 # not in species will match none of the species, you need to do an absolute if test
 # on the species from species_list against row[9]
+
+#realized that you weren't capturing the header row that would cause issues for csv to shapefile.
+
 for species in species_list:
+
     print("Extracting: " + str(species) + " from: " + file_name)
     file = open(species + ".csv", "a", encoding="utf-8")
     with open(file_name, encoding="utf8") as species_file:
-        next(species_file)
+        first_row = next(species_file).split("\t")
+        file.write(", ".join(first_row))
         for row in csv.reader(species_file, delimiter="\t"):
             if str(row[9]) == species:
                 file.write(", ".join(row))
                 file.write("\n")
     file.close()
+
+# Now do shapefile stuff
+
+for species in species_list:
+
+    #convert species to shjapefile
+    species_file_name = species + ".csv"
+
+    #heatmap
+    
+    #delete intermetdiate files
+
+
+
+
+
 
  # I feel like I am close! My idea was to change row 50 to str(row[9]) because that is where the species name is in the original file,
 # but I got "out of range" error again. I also played around with changing row 46 to include [0] or [1], but that did not seem to work.
