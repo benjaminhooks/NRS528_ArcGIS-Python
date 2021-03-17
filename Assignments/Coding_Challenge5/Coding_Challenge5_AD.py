@@ -82,7 +82,7 @@ for species in species_list:
     species_file_name = species + ".csv"
 
     #heatmap
-    
+
     #delete intermetdiate files
 
 
