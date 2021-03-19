@@ -1,4 +1,4 @@
-# Turns RI soil CSV into shape file, then performs analysis upon the created shape file, extracting specific soil types for counties. 
+# Turns RI soil CSV into shape file, then performs analysis upon the created shape file, extracting specific soil types for counties based on user input. 
 
 import arcpy, csv
 
