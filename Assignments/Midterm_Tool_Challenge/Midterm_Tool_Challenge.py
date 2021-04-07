@@ -6,7 +6,7 @@ import arcpy, csv
 
 arcpy.env.overwriteOutput = True
 
-arcpy.env.workspace = r"C:\NRS_528\Midterm_Tool_Challenge"
+arcpy.env.workspace = r"C:\Data\Students_2021\Hooks\Assignments\Midterm_Tool_Challenge"
 file_name = r"Soils_Special_Point_Features.csv"
 
 

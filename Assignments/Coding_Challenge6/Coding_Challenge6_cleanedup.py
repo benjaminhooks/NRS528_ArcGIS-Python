@@ -2,7 +2,7 @@ import arcpy, os
 
 
 listMonths = ["02", "04", "05", "07", "10", "11"]
-outputDirectory = r"C:\NRS_528\Classes\06_Cheating\Step_3_Data"
+outputDirectory = r"C:\Data\Students_2021\1_Data"
 if not os.path.exists(outputDirectory):
     os.mkdir(outputDirectory)
     

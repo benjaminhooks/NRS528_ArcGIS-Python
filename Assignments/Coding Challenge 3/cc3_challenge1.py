@@ -16,19 +16,21 @@
 import os
 import shutil
 
-os.mkdir(r"C:\CC3")
+base_directory = r"C:\CC3"
 
-os.mkdir(r"C:\CC3\draft_code")
+os.mkdir(base_directory)
 
-os.mkdir(r"C:\CC3\draft_code\pending")
+os.mkdir(os.path.join(base_directory, "draft_code"))
 
-os.mkdir(r"C:\CC3\draft_code\complete")
+os.mkdir(os.path.join(base_directory, "pending"))
 
-os.mkdir(r"C:\CC3\includes")
+os.mkdir(os.path.join(base_directory, "complete"))
 
-os.mkdir(r"C:\CC3\layouts")
+os.mkdir(os.path.join(base_directory, "includes"))
 
-os.mkdir(r"C:\CC3\layouts\default")
+os.mkdir(os.path.join(base_directory, "layouts"))
+
+os.mkdir(os.path.join(base_directory, "layouts", "default"))
 
 os.mkdir(r"C:\CC3\layouts\post")
 
