@@ -52,8 +52,7 @@ print("There are " + str(len(species_count)) + " unique species in this dataset"
 
 
 # Used "split by attribute" tool which easily splits the dataset into two shapefiles. Only issue not tackled yet is the naming/renaming of the output shape 
-# files, for they have very generic 1 letter names. I imagine this is pretty simple to do with some os functions which I may add, but for the sake of the 
-# assignment the outputs are correct
+# files, for they have very generic 1 letter names. I imagine this is pretty simple to do with os.rename which I may add in soon
 
 in_feature_class = input_shp
 target_workspace = arcpy.env.workspace
