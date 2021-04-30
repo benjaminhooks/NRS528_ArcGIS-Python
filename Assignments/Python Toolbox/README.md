@@ -58,5 +58,7 @@ Using the POP1 and SUM parameters, we will get a .dbf output with the output sta
 
 ![Image](https://github.com/benjaminhooks/NRS528_ArcGIS-Python/blob/main/Assignments/Python%20Toolbox/images/11.png?raw=true)
 
-Shown above, we see that a total of up to 154661 people could be affected. Due to vector data not splitting the population of specific OBJECTID's, this number represents
-the "worst case" of population affected from the 100 buffer zone. 
+Shown above, we see that a total of up to 154661 people could be affected. Due to vector data not splitting the population of 
+specific OBJECTID's, this number representsthe "worst case" of population affected from the 100 buffer zone. 
+
+This workflow can be extrapolated to various other uses. For example, another use was to input port and commercial harbor data and then calculate the acreage affected due to SLR. 
