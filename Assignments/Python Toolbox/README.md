@@ -23,4 +23,4 @@ Input the desired parameter to be analyzed. Output will be a .dbf file that can 
 
 Due to the data being buffered by a user defined amount, the data needs to be projected for the correct results. 
 
-![Banner Image](/images/1.png?raw=true)
+![Banner Image](https://github.com/benjaminhooks/NRS528_ArcGIS-Python/blob/main/Assignments/Python%20Toolbox/images/1.png?raw=true)
