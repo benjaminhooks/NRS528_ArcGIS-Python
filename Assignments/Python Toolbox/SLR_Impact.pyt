@@ -1,4 +1,22 @@
 import arcpy
+
+# This toolbox is intended to be used for calculating the impacts of sea level rise (SLR) from RIGIS data, but can be utilized for other forms of data analyses as well
+
+# The 4 scripts and their intended uses are;
+
+# Data Projection - To ensure accurate end results, the user should project their datasets into the relevant coordinate system for the study area.
+
+# Buffer - Buffer the sea level rise data to a specified amount. The SLR data used within this project was documented as polylines 
+#          (to show the roads being impacted by SLR.) By buffering the SLR data out to different points, were are able to calculate the amount 
+#          of features affected given different circumstances.
+
+# Clip - Clip the data to be analyzed by the buffered SLR data.
+
+# Calculate Statistics - Calculate statistics based on user input. Examples include summing the affected area, determining the amount 
+#                        of unique/total structures affected, or the average amount for a specific parameter. Input the desired parameter to be analyzed. Output
+#                        will be a .dbf file that can be viewed within ArcGIS
+
+
 class Toolbox(object):
     def __init__(self):
         self.label = "Feature Impacts Python Toolbox"
@@ -12,7 +30,9 @@ class project(object):
                            "to ensure statistical accuracy"
 
         self.canRunInBackground = False
-
+        
+# Parameters for projecting a shapefile. User can choose the projection they need in ArcPro based off of the data/area. 
+        
     def getParameterInfo(self):
         params = []
 
@@ -81,6 +101,9 @@ class buffer(object):
         self.canRunInBackground = False
 
     def getParameterInfo(self):
+        
+        #         Parameters for buffering the input data. User can define the buffer amount in feet or meters based off of data or previous projection
+        
         params = []
 
         slr_data = arcpy.Parameter(name="initial_data",
@@ -157,6 +180,9 @@ class clip(object):
         self.canRunInBackground = False
 
     def getParameterInfo(self):
+        
+#         Parameters for clipping a shapefile. Use previous buffered area to clip to the desired study area for accurate statistical analysis
+        
         params = []
 
         buffer_data = arcpy.Parameter(name="buffer_zone",
@@ -226,6 +252,10 @@ class statistics(object):
 
 
     def getParameterInfo(self):
+        
+#         Parameters for the statistical analysis. Use a parameter from the study area attribute table (such as objectid, area, population, etc. depending on data)
+#         and the type of analysis you want to be done on the data
+        
         params = []
 
 
@@ -293,7 +323,7 @@ class statistics(object):
         return
 
 
-
+# Uncomment below if running in Python IDE
 
 # def main():
 #     tool = calculatesealevel()
