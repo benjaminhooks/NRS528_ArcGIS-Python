@@ -19,4 +19,6 @@ determining the amount of unique/total structures affected, or the average amoun
 Input the desired parameter to be analyzed. Output will be a .dbf file that can be viewed within ArcGIS
 
 
+## **Determining Impacts from Sea Level Rise**
+
 
