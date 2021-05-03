@@ -1,6 +1,6 @@
 import arcpy, csv
 
-base_directory = r"C:\Data\Students_2021\Hooks\Assignments\Coding_Challenge5"
+base_directory = r"C:\NRS_528\Assignment5\Test"
 
 arcpy.env.workspace = base_directory
 file_name = "homarus_americanus_gammarus.csv"
@@ -50,7 +50,7 @@ lyr = arcpy.MakeXYEventLayer_management(in_Table, x_coords, y_coords, out_Layer,
 arcpy.CopyFeatures_management(lyr, saved_Layer)
 #
 #
-desc = arcpy.Describe(os.path.join(base_directory, "homarus_americanus.shp"))
+desc = arcpy.Describe(saved_Layer)
 
 
 
@@ -117,7 +117,7 @@ lyr = arcpy.MakeXYEventLayer_management(in_Table, x_coords, y_coords, out_Layer,
 arcpy.CopyFeatures_management(lyr, saved_Layer)
 
 
-desc = arcpy.Describe(r"C:\NRS 528\Assignment5\homarus_gammarus.shp")
+desc = arcpy.Describe(saved_Layer)
 
 
 
