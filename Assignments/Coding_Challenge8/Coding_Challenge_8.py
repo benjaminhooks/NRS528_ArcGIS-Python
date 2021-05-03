@@ -1,4 +1,4 @@
-# Code from challenge 5, but with a function that is called upon twice to describe shapefile parameters
+# Code from challenge 4, but with a function that is called upon twice to describe shapefile parameters
 import arcpy
 from arcpy import env
 arcpy.env.overwriteOutput = True
