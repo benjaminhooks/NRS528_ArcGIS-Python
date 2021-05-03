@@ -1,5 +1,7 @@
 import arcpy, csv
 
+# Input directory where file_name resides
+
 base_directory = r"C:\NRS_528\Assignment5\Test"
 
 arcpy.env.workspace = base_directory
@@ -7,6 +9,7 @@ file_name = "homarus_americanus_gammarus.csv"
 
 arcpy.env.overwriteOutput = True
 
+# Code below takes csv file and separates it into multiple csv files based on species names. 
 
 species_list = []
 
@@ -31,6 +34,7 @@ for species in species_list:
                 file.write("\n")
     file.close()
 
+# Code below begins to process the newly created csv file based on the species name
 
 in_Table = r"Homarus americanus.csv"
 x_coords = "decimalLongitude"
