@@ -6,9 +6,12 @@ import arcpy, csv
 
 arcpy.env.overwriteOutput = True
 
+# Enter folder with soil csv here
+
 arcpy.env.workspace = r"C:\Data\Students_2021\Hooks\Assignments\Midterm_Tool_Challenge"
 file_name = r"Soils_Special_Point_Features.csv"
 
+# The code below reads the soil csv based on user input. The location inputs are restricted to RI counties, but the soil type list will populate from the csv
 
 soils_list = []
 
@@ -32,7 +35,7 @@ for counties in municipalities_list:
 selected_county = input("Enter County from List: ")
 selected_county = selected_county.upper()
 
-
+# Code below begins processince of the csv file, converting to a shapefile and creating further files from the user input
 
 in_Table = file_name
 x_coords = "X"
@@ -104,6 +107,7 @@ soil_output_feature_class = arcpy.env.workspace + "\\" + selected_soil + '_withi
 
 arcpy.analysis.Clip(input_features, clip_features, soil_output_feature_class)
 
+# If all goes well, the script will delete any intermediate files, and you will be left with a shapefile based upon your soil and county choices.
 
 if arcpy.Exists(selected_soil + '_within_' + selected_county + ".shp"):
     print("Succesfully Extracted soil points within county!")
